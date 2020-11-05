@@ -1,101 +1,110 @@
 
-body{
+body {
     margin: 0;
     padding: 0;
-    }
-    .bg{
+}
+
+.bg {
     position: relative;
-    background:url('background.png');
+    background: url('background.png');
     height: 100vh;
     width: 100vw;
     background-size: cover;
     background-position: center;
     background-repeat: repeat-x;
     animation: bgmove 5s linear infinite;
+}
+
+
+@keyframes bgmove {
+    0% {
+        background-position: 0px;
     }
 
-
-    @keyframes bgmove{
-0%{
-     background-position:0px;
+    100% {
+        background-position: 1000px;
+    }
 }
 
-100%{
-    background-position: 1000px;
-}
-} 
 
-
-.car{
+.car {
     position: absolute;
     bottom: 4%;
+    left:65%;
     width: 435px;
     height: 135px;
-    left: 40%;
-    background:url('cimage.png') transparent no-repeat;
+    /*left: 40%;*/
+    background: url('cimage.png') transparent no-repeat;
+    animation: carmove 5s linear infinite;
 }
 
-@keyframes car{
-    0%{
-        right:-10%;
+@keyframes carmove {
+    0% {
+        left: 80%;
     }
-    100%{
-        right:100%;
+
+    100% {
+        left: 20%;
     }
 }
 
-.tyre{
+.tyre {
     width: 60px;
-    height:60px;
+    height: 60px;
     border-radius: 50%;
     background: black;
-    animation: tyre 5s infinite linear ;
+    animation: tyr 5s infinite linear;
 }
 
-@keyframes tyre{
-    0%{
+@keyframes tyr {
+    0% {
         transform: rotate(360deg);
     }
-    100%{
-        transform: rotate(0deg) ;
+
+    100% {
+        transform: rotate(0deg);
     }
 }
 
-.left{
+.left {
     position: absolute;
     top: 57%;
     left: 12%;
 }
 
-.right{
+.right {
     position: absolute;
     top: 57%;
     left: 71.5%;
 }
 
-.rim{
+.rim {
     position: absolute;
-    top:17%;
-    left:17%;
-    width: 35px;
-    height: 35px;
+    top: 15%;
+    left: 15%;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 2px dotted white;
 }
 
-.fuelstation{
+.fuelstation {
     position: absolute;
     bottom: 0px;
     width: 480px;
     height: 400px;
     left: 0%;
-
-    background:url('fuelstation.png') transparent no-repeat;
+    background: url('fuelstation.png') transparent no-repeat;
 }
 
-.pause{
-    
+.pause {
+animation-play-state: paused !important;
 }
-
-
-
+.ply {
+animation-play-state: running !important;
+}
+.rscore{
+    position:absolute;
+    top:10%;
+    right:10%;
+}
