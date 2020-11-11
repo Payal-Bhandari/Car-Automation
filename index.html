@@ -1,4 +1,5 @@
 
+
 <html>
 <head>
     <title> Road Mapping</title>
@@ -7,25 +8,17 @@
 </head>
 
 <body>
-    <div class="bg pause">
-        <div class="rscore">
+    <div id= "bg1" class="bg pause">
+        
             <form id="carplay" class="form-control">
-                <input type="number" min="100" max="600" />
                 <input type="submit" value="submit" class="btn btn-info" />
-
-                <div class="clearfix"></div>
-                <div class="row" style="height: 25px;">
-                    <div id="km" class="col-sm-4 d-inline-block ">200</div>
-                    <div id="tm" class="col-sm-4 d-inline-block">120</div>
-                    <div id="refill" class="col-sm-4 d-inline-block">2</div>
-                </div>
             </form>
         </div>
         <div id="car1" class="car pause">
-            <div class="tyre left pause">
+            <div id = "tyre1" class="tyre left pause">
                 <div class="rim"></div>
             </div>
-            <div class="tyre right pause">
+            <div id = "tyre2" class="tyre right pause">
                 <div class="rim"></div>
             </div>
         </div>
@@ -49,27 +42,17 @@
         //$("#carplay").submit()
         
         function carmove() {
-            $("#car1").removeClass("pause");
-            st= setTimeout(function () {
-                $("#car1").addClass("pause").hide();
-                $(".fuelstation").show();
-            },
-                5000);
-            $(".fuelstation").hide();
-            $("#car1").show();
+            $("#car1,#bg1,#tyre1,#tyre2").removeClass("pause");
+
         }
         $(document).ready(function () {
             var st = null;
             var t=5000;
             $("#carplay").submit(function (e) {
-                // alert("submit");
-                e.preventDefault();
-                clearTimeout(st);
                 
-                 t = setInterval(function () {
+                e.preventDefault();
+                
                     carmove();
-                },
-                    5000);
                 //clearInterval(t);
             });
            
@@ -78,6 +61,5 @@
     </script>
 </body>
 </html>
-
 
 
